@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict if Customer Churns</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div>
+        <h1>Predict if Customer Churns</h1>
+        <h3>This form is to predict likelihood customer churns</h3>
+        <form method="POST">
+            <label for="contractType">Contract Type:</label><br>
+            <select name="contractType" id="contractType">
+                <option value="One Year" selected>One Year</option>
+                <option value="Month-to-Month">Month-to-Month</option>
+                <option value="Two Year">Two Year</option>
+            </select><br><br>
+
+            <label for="internetType">Internet Type:</label><br>
+            <select name="internetType" id="internetType">
+                <option value="Fiber Optic" selected>Fiber Optic</option>
+                <option value="Cable">Cable</option>
+                <option value="DSL">DSL</option>
+            </select><br><br>
+
+            <label for="paymentMethod">Payment Method:</label><br>
+            <select name="paymentMethod" id="paymentMethod">
+                <option value="Credit Card" selected>Credit Card</option>
+                <option value="Bank Withdrawal">Bank Withdrawal</option>
+                <option value="Mailed Check">Mailed Check</option>
+            </select><br><br>
+
+            <label for="streamMusic">Stream Music:</label><br>
+            <select name="streamMusic" id="streamMusic">
+                <option value="yes">yes</option>
+                <option value="no" selected>no</option>
+            </select><br><br>
+
+            <label for="paperlessBilling">Paperless Billing:</label><br>
+            <select name="paperlessBilling" id="paperlessBilling">
+                <option value="yes">yes</option>
+                <option value="no" selected>no</option>
+            </select><br><br>
+
+            <label for="married">Married:</label><br>
+            <select name="married" id="married">
+                <option value="yes">yes</option>
+                <option value="no" selected>no</option>
+            </select><br><br>
+
+            <label for="premiumTechSupport">Premium Tech Support:</label><br>
+            <select name="premiumTechSupport" id="premiumTechSupport">
+                <option value="yes">yes</option>
+                <option value="no" selected>no</option>
+            </select><br><br>
+
+            <label for="numReferrals">Number of Referrals:</label><br>
+            <input type="number" id="numReferrals" name="numReferrals" value="1" min="0" max="20" pattern="^(?:1[01][0-9]|0?[1-9][0-9]?)$" title="Please enter a valid number between 0 and 20."><br><br>
+
+            <label for="numDependents">Number of Dependents:</label><br>
+            <input type="number" id="numDependents" name="numDependents" value="1" min="0" max="10" pattern="^(?:1[01][0-9]|0?[1-9][0-9]?)$" title="Please enter a valid number between 0 and 10."><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" value="30" min="0" max="100" pattern="^(?:1[01][0-9]|0?[1-9][0-9]?)$" title="Please enter a valid age between 0 and 100."><br><br>
+
+            <label for="total_monthly_fee">Total Charges per Month:</label><br>
+            <input type="number" id="total_monthly_fee" name="total_monthly_fee" value="19" step="0.01" min="18"><br><br>
+            
+            <label for="tenureMonths">Tenure months:</label><br>
+            <input type="number" id="tenureMonths" name="tenureMonths" value="30" min="1" max="100" pattern="^(?:1[01][0-9]|0?[1-9][0-9]?)$" title="Please enter a valid number of tenure months between 0 and 100."><br><br>
+
+            <label for="avgGbDownload">Avg GB Download Monthly:</label><br>
+            <input type="number" id="avgGbDownload" name="avgGbDownload" value="30" min="0" max="100" pattern="^(?:1[01][0-9]|0?[1-9][0-9]?)$" title="Please enter a valid number between 0 and 100."><br><br>
+
+            <label for="totalLongDistanceFee">Total Long Distance Fee:</label><br>
+            <input type="number" id="totalLongDistanceFee" name="totalLongDistanceFee" value="0" step="0.01"><br><br>
+
+            <!-- Button for predict -->
+            <input type="submit" value="Predict">
+        </form>
+
+        <!-- If there is a prediction, show it -->
+        {% if prediction is defined %}
+            <h2>Model Prediction: {% if prediction == 1 %}Customer will churn{% else %}Customer will not churn{% endif %}</h2>
+
+        {% endif %}
+    </div>
+</body>
+</html>

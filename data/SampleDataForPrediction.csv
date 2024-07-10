@@ -1,0 +1,15 @@
+﻿churn_label,Yes,No (default)
+contract_type,One Year,One Year
+internet_type,Cable,FiberOptic
+payment_method,Bank Withdrawal,CreditCard
+stream_music,No,No
+paperless_billing,No,No
+married,Yes,No
+has_premium_tech_support,No,No
+num_referrals,1,1
+num_dependents,0,1
+age,34,30
+total_monthly_fee,87.4,19
+tenure_months,67,30
+avg_gb_download_monthly,10,30
+total_long_distance_fee,1902.8,0

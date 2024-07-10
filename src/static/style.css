@@ -1,0 +1,63 @@
+
+/* Global styles Fancy background here https://uigradients.com/#Mirage*/
+body {
+    font-family: 'Open Sans', sans-serif; /* sets default font to open sans, sans-serif as backup */
+    background: #16222A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: 16px; /* Increased the base font size */
+}
+
+input, select {
+    /* Reference: https://stackoverflow.com/a/6080482 */
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/*  2. Simple CSS formatting for HTML form
+    Code adapted from https://www.w3schools.com/css/tryit.asp?filename=trycss_forms
+    Tutorial: https://www.w3schools.com/css/css_form.asp
+*/
+
+input[type=text], input[type=number], select {
+    width: 100%;
+    padding: 0.5em 1em; /* Using em for padding */
+    margin: 0.5em 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Fancy submit button here: https://uigradients.com/#Terminal */
+input[type=submit] {
+    width: 100%;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0f9b0f, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    padding: 1em; /* Using em for padding */
+    margin: 1em 5%; /* Using percentage for left and right margins */
+    background-color: rgba(210, 215, 211, 1); 
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    /* Styles for tablets and mobile devices */
+    div {
+        margin: 1em 2%;
+    }
+}
